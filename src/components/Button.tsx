@@ -1,16 +1,14 @@
-import { useState } from "react";
+import { ButtonHTMLAttributes } from 'react'
 
-export function Button() {
+// Herdar todos as propriedades do botao do html quando importar esssa fucntion
+type buttonProps = ButtonHTMLAttributes<HTMLButtonElement>
 
-  const [counter, setCounter] = useState(0)
+export function Button(props: buttonProps) {
 
-  function increment() {
-    setCounter(counter + 1)
-  }
 
   return (
     <div>
-      <button onClick={increment}>{counter}</button>
+      <button className="button" {...props} />
     </div>
   )
 }
