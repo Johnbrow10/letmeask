@@ -38,6 +38,11 @@ export function Home() {
       return;
     }
 
+    if (roomRef.val().endedAt) {
+      alert('Sala foi fechada pelo ADM');
+      return;
+    }
+
     history.push(`/rooms/${roomCode}`)
   }
 
